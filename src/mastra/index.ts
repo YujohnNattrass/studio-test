@@ -5,6 +5,7 @@ import { LibSQLStore } from '@mastra/libsql';
 import { weatherWorkflow } from './workflows/weather-workflow';
 import { weatherAgent } from './agents/weather-agent';
 import { toolCallAppropriatenessScorer, completenessScorer, translationScorer } from './scorers/weather-scorer';
+import { myMcpServer } from './mcp';
 
 export const mastra = new Mastra({
   workflows: { weatherWorkflow },
@@ -18,6 +19,9 @@ export const mastra = new Mastra({
     name: 'Mastra',
     level: 'info',
   }),
+  mcpServers: {
+    myMcpServer,
+  },
   bundler: {
     externals: ['pkce-challenge'],
   },

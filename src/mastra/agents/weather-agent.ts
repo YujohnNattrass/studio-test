@@ -2,7 +2,7 @@ import { Agent } from '@mastra/core/agent';
 import { Memory } from '@mastra/memory';
 import { LibSQLStore } from '@mastra/libsql';
 import { scorers } from '../scorers/weather-scorer';
-import { testMcpClient } from '../mcp';
+// import { testMcpClient } from '../mcp';
 
 export const weatherAgent = new Agent({
   name: 'Weather Agent',
@@ -22,7 +22,7 @@ export const weatherAgent = new Agent({
 `,
 description: 'A helpful weather assistant that provides accurate weather information and can help planning activities based on the weather.',
   model: 'openai/gpt-4o-mini',
-  tools: await testMcpClient.getTools(),
+  // tools: await testMcpClient.getTools(),
   scorers: {
     toolCallAppropriateness: {
       scorer: scorers.toolCallAppropriatenessScorer,

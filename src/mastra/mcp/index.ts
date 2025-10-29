@@ -10,6 +10,7 @@ import { weatherTool } from "../tools/weather-tool";
 //     },
 //   }
 // });
+console.log(`hello world`)
 
 export const myMcpServer = new MCPServer({
   id: "my-mcp-server",
